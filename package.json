@@ -1,13 +1,17 @@
 {
   "name": "heatroom-api",
   "version": "1.0.0",
-  "description": "",
+  "description": "Heatmap backend",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pepebm/heatroom-api.git"
+  },
+  "keywords": ["node", "azure", "nosql", "cv", "dl"],
   "author": "los integradores",
   "license": "ISC",
   "dependencies": {

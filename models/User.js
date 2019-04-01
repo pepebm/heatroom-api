@@ -47,7 +47,6 @@ UsersSchema.methods.toAuthJSON = () => {
   const today = new Date();
   const expirationDate = new Date(today);
   expirationDate.setDate(today.getDate() + 60);
-  console.log('hola');
   return {
     _id: this._id,
     email: this.email,
