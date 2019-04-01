@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ."
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "los integradores",
@@ -15,6 +15,7 @@
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
+    "express-jwt": "^5.3.1",
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.4.20",
