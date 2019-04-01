@@ -29,6 +29,7 @@ mongoose.set('debug', true);
 mongoose.connect(mongoString, {
   useNewUrlParser: true
 });
+
 // Models
 require('./models/User');
 
