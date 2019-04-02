@@ -5,11 +5,15 @@ const router = require('express').Router();
 const auth = require('../auth');
 const Users = mongoose.model('Users');
 
-//POST new user route (optional, everyone has access)
+
+router.get('/', auth.optional, (req, res, next) => {
+  return Users.find({})
+    .then(usr => res.json({usr}))
+    .catch(err => res.json({err}).status(404));
+});
+
 router.post('/', auth.optional, (req, res, next) => {
   const { body: { user } } = req;
-
-  console.log(user);
 
   if(!user.email) {
     return res.status(422).json({
@@ -29,11 +33,7 @@ router.post('/', auth.optional, (req, res, next) => {
 
   const finalUser = new Users(user);
 
-  console.log(finalUser);
-
   finalUser.setPassword(user.password);
-
-  console.log(finalUser);
 
   return finalUser.save().then(() => res.json({ user: finalUser.toAuthJSON }));
 });
