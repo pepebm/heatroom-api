@@ -28,10 +28,14 @@ app.use(session({
 mongoose.set('debug', true);
 mongoose.connect(mongoString, {
   useNewUrlParser: true
-});
+}).then(() => console.log('Connection to CosmosDB successful'))
+  .catch(err => console.error(err));
 
 // Models
 require('./models/User');
+require('./models/Timeseries');
+require('./models/Heatmap');
+
 
 // Passport (must be below all models)
 require('./config/passport');
