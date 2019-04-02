@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const auth = require('../auth');
 const router = require('express').Router();
 
-const Heatmaps = mongoose.model('Heatmaps');
+const Hm05m = mongoose.model('Hm05m');
 
 router.get('/', auth.optional, (req, res, next) => {
-  return Heatmaps.find({})
+  return Hm05m.find({})
     .then(hm => res.json({ data: hm }))
     .catch(err => res.json({ msg: err }).status(404));
 });
