@@ -6,8 +6,8 @@ const Hm05m = mongoose.model('Hm05m');
 
 router.get('/', auth.optional, (req, res, next) => {
   return Hm05m.find({})
-    .then(hm => res.json({ data: hm }))
-    .catch(err => res.json({ msg: err }).status(404));
+    .then(hm => res.send(hm))
+    .catch(err => res.send(err).status(404));
 });
 
 module.exports = router;
